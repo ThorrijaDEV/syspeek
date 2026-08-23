@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "syspeek"
+version = "0.1.0"
+description = "Dashboard TUI de sistema con curses puro: CPU por núcleo, memoria, red y top procesos leyendo /proc — cero dependencias"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "ThorrijaDEV" }]
+keywords = ["tui", "curses", "monitor", "proc", "linux"]
+classifiers = [
+  "Environment :: Console :: Curses",
+  "Intended Audience :: System Administrators",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+]
+
+[project.scripts]
+syspeek = "syspeek.cli:main"
+
+[project.urls]
+Repository = "https://github.com/ThorrijaDEV/syspeek"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/syspeek"]
